@@ -20,25 +20,25 @@ def lihat_konser():
         print(f"Seat Tersedia  : {konser['seat_tersedia']}")
 
 #Mencari konser
-def cari_konser(keyword):
+def cari_konser(keyword): #Searching menggunakan linear search karena data yang digunakan adalah dict
 
     ditemukan = False
-
+    area_pencarian = ["artis", "genre", "tempat"]
     print("\n===== HASIL PENCARIAN =====")
 
     for konser in data_konser:
+        for value in area_pencarian:
+            if keyword.lower() in str(konser[value]).lower():
 
-        if (keyword.lower() in konser['artis'].lower() or
-            keyword.lower() in konser['genre'].lower()):
-
-            ditemukan = True
-
-            print(f"\nNama Artis     : {konser['artis']}")
-            print(f"Tanggal        : {konser['tanggal']}")
-            print(f"Genre          : {konser['genre']}")
-            print(f"Harga Tiket    : Rp{konser['harga']}")
-            print(f"Tempat         : {konser['tempat']}")
-            print(f"Seat Tersedia  : {konser['seat_tersedia']}")
+                ditemukan = True
+                
+                print(f"\nNama Artis     : {konser['artis']}")
+                print(f"Tanggal        : {konser['tanggal']}")
+                print(f"Genre          : {konser['genre']}")
+                print(f"Harga Tiket    : Rp {konser['harga']}")
+                print(f"Tempat         : {konser['tempat']}")
+                print(f"Seat Tersedia  : {konser['seat_tersedia']}")
+                break
 
     if not ditemukan:
         print("Konser tidak ditemukan!")
@@ -100,3 +100,6 @@ def info_konser(nama_artis):
 
     if not ditemukan:
         print("Konser tidak ditemukan!")
+
+kata = str(input("Masukkan keyword: "))
+cari_konser(kata)
