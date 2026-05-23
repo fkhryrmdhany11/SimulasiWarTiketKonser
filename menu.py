@@ -1,4 +1,5 @@
 import util as ut
+from daftar_konser import menu_daftar_konser
 from settings import SistemWarTiket
 sistem = SistemWarTiket()
 
@@ -39,7 +40,7 @@ def menu_awal(sistem):
 def menu_utama(sistem):
     ut.cls()
     while sistem.user_login:
-        ut.print_header("SISTEM WAR TIKET KONSER")
+        ut.print_header("MENU UTAMA")
         print("1. Daftar Konser")
         print("2. Booking Seat")
         print("3. Histori Transaksi")
@@ -51,7 +52,8 @@ def menu_utama(sistem):
 
 
         if pilihan == "1":
-            pass
+            menu_daftar_konser()
+            ut.cls()
 
         elif pilihan == "2":
             pass

@@ -1,6 +1,5 @@
 import json
 import util as ut
-import menu as main
 
 # =========================
 # CLASS USER
@@ -95,6 +94,7 @@ class SistemWarTiket:
             pass
 
     def run_app(self):
+        import menu
         ut.cls()
         while True:
             ut.print_header("SISTEM WAR TIKET KONSER")
@@ -104,11 +104,10 @@ class SistemWarTiket:
             pilihan = input("Pilih menu: ")
 
             if pilihan == "1":
-                verif = main.menu_awal(self)
-                print(verif)
-                print(self.user_login)
+                verif = menu.menu_awal(self)
                 if verif and self.user_login:
-                    main.menu_utama(self)
+                    menu.menu_utama(self)
+                ut.cls()
             elif pilihan == "0":
                 print("Terima kasih sudah menggunakan sistem.")
                 break
