@@ -1,6 +1,6 @@
 import json
-from sort import sort_artis
-import util as ut
+from utils.sort import sort_artis
+import utils.util as ut
 
 # =========================
 # NODE GENRE

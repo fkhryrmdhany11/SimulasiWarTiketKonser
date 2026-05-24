@@ -10,3 +10,7 @@ def pembatas():
 
 def cls():
     os.system("cls")
+
+def verif():
+    input("\nTekan Enter untuk lanjut...")
+    cls()

@@ -1,0 +1,32 @@
+from utils.util import print_header, cls
+from utils.path import KONSER_FILE
+import json
+
+with open(KONSER_FILE, "r") as file:
+    data_konser = json.load(file)
+
+def LinearSearch():
+    cls()
+    print_header("PENCARIAN")
+    keyword = str(input("Masukkan keyword: "))
+    ditemukan = False
+    area_pencarian = ["artis", "genre", "tempat"]
+    print()
+    print_header("HASIL PENCARIAN")
+
+    for konser in data_konser:
+        for value in area_pencarian:
+            if keyword.lower() in str(konser[value]).lower():
+
+                ditemukan = True
+                
+                print(f"\nNama Artis     : {konser['artis']}")
+                print(f"Tanggal        : {konser['tanggal']}")
+                print(f"Genre          : {konser['genre']}")
+                print(f"Harga Tiket    : Rp {konser['harga']}")
+                print(f"Tempat         : {konser['tempat']}")
+                print(f"Seat Tersedia  : {konser['seat_tersedia']}")
+                break
+
+    if not ditemukan:
+        print("Konser tidak ditemukan!")

@@ -1,5 +1,8 @@
 {
     "Pari": {
         "password": "1234"
+    },
+    "yadi": {
+        "password": "2222"
     }
 }

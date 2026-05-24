@@ -79,7 +79,7 @@ class CircularPromo:
             
             self.current = self.current.next # pindah ke promo berikutnya
             
-            time.sleep(0.5)
+            time.sleep(0.1)
             stop = input('ketik "s" untuk berhenti: ')
             if stop.lower() == 's':
                 break

@@ -1,15 +1,7 @@
 import json
-import util as ut
-
-# =========================
-# CLASS USER
-# =========================
-
-class User:
-    def __init__(self, username, password):
-        self.username = username
-        self.password = password
-
+from utils.util import print_header, cls
+from models.user import User
+from utils.path import USERS_FILE, KONSER_FILE
 
 # =========================
 # SISTEM WAR TIKET
@@ -19,15 +11,50 @@ class SistemWarTiket:
     def __init__(self):
         self.users = {}
         self.user_login = None
-        self.load_data()
+        self.konser_list = []
+        self.load_konser()
 
+    def generate_seat(self,
+                    vip_jumlah,
+                    reg_jumlah,
+                    harga_vip,
+                    harga_reg):
+
+        seats = {}
+
+        # VIP
+        for i in range(1, vip_jumlah + 1):
+
+            kode = f"VIP{i}"
+
+            seats[kode] = {
+                "kategori": "VIP",
+                "harga": harga_vip,
+                "booked": False,
+                "username": None
+            }
+
+        # REGULER
+        for i in range(1, reg_jumlah + 1):
+
+            kode = f"REG{i}"
+
+            seats[kode] = {
+                "kategori": "REGULER",
+                "harga": harga_reg,
+                "booked": False,
+                "username": None
+            }
+
+        return seats
+    
     # =========================
     # REGISTER
     # =========================
 
     def register(self):
-        ut.cls()
-        ut.print_header("REGISTER")
+        cls()
+        print_header("REGISTER")
 
         username = input("Masukkan username: ")
         password = input("Masukkan password: ")
@@ -47,8 +74,8 @@ class SistemWarTiket:
     # =========================
 
     def login(self):
-        ut.cls()
-        ut.print_header("LOGIN")
+        cls()
+        print_header("LOGIN")
 
         username = input("Username: ")
         password = input("Password: ")
@@ -75,7 +102,7 @@ class SistemWarTiket:
                 "password": user.password
             }
 
-        with open("users.json", "w") as file:
+        with open(USERS_FILE, "w") as file:
             json.dump(data, file, indent=4, ensure_ascii=False)
 
     # =========================
@@ -84,7 +111,7 @@ class SistemWarTiket:
 
     def load_data(self):
         try:
-            with open("users.json", "r") as file:
+            with open(USERS_FILE, "r") as file:
                 data = json.load(file)
 
                 for username, info in data.items():
@@ -92,24 +119,20 @@ class SistemWarTiket:
 
         except FileNotFoundError:
             pass
+    
+    def load_konser(self):
 
-    def run_app(self):
-        import menu
-        ut.cls()
-        while True:
-            ut.print_header("SISTEM WAR TIKET KONSER")
-            print("1. Masuk")
-            print("0. Keluar")
-            ut.pembatas()
-            pilihan = input("Pilih menu: ")
+        with open(KONSER_FILE, "r") as file:
 
-            if pilihan == "1":
-                verif = menu.menu_awal(self)
-                if verif and self.user_login:
-                    menu.menu_utama(self)
-                ut.cls()
-            elif pilihan == "0":
-                print("Terima kasih sudah menggunakan sistem.")
-                break
-            else:
-                print("Menu tidak valid.")
+            data = json.load(file)
+
+        for konser in data:
+
+            konser["seats"] = self.generate_seat(
+                konser["vip_seat"],
+                konser["reg_seat"],
+                konser["harga_vip"],
+                konser["harga_reg"]
+            )
+
+            self.konser_list.append(konser)
