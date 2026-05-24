@@ -6,9 +6,7 @@
         "harga": 2500000,
         "tempat": "GBK Jakarta",
         "seat_tersedia": 120,
-        "nama_seat": [
-            "A1", "A2", "A3", "A4", "A5"
-        ]
+        "nama_seat": ["A1", "A2", "A3", "A4", "A5"]
     },
 
     {
@@ -18,9 +16,7 @@
         "harga": 1800000,
         "tempat": "ICE BSD",
         "seat_tersedia": 90,
-        "nama_seat": [
-            "B1", "B2", "B3", "B4", "B5"
-        ]
+        "nama_seat": ["B1", "B2", "B3", "B4", "B5"]
     },
 
     {
@@ -30,9 +26,7 @@
         "harga": 1500000,
         "tempat": "Braga Festival Bandung",
         "seat_tersedia": 70,
-        "nama_seat": [
-            "C1", "C2", "C3", "C4", "C5"
-        ]
+        "nama_seat": ["C1", "C2", "C3", "C4", "C5"]
     },
 
     {
@@ -42,8 +36,126 @@
         "harga": 3000000,
         "tempat": "JIS Jakarta",
         "seat_tersedia": 100,
-        "nama_seat": [
-            "VIP1", "VIP2", "VIP3", "REG1", "REG2"
-        ]
+        "nama_seat": ["VIP1", "VIP2", "VIP3", "REG1", "REG2"]
+    },
+
+    {
+        "artis": "Super Junior",
+        "tanggal": "13 Oktober 2026",
+        "genre": "K-Pop",
+        "harga": 4000000,
+        "tempat": "Tepian Narosa",
+        "seat_tersedia": 90,
+        "nama_seat": ["SP1", "SP2", "SP3", "SP4", "SP5"]
+    },
+
+    {
+        "artis": "Arctic Monkeys",
+        "tanggal": "18 September 2026",
+        "genre": "Rock",
+        "harga": 2200000,
+        "tempat": "Beach City Ancol",
+        "seat_tersedia": 85,
+        "nama_seat": ["R1", "R2", "R3", "R4", "R5"]
+    },
+
+    {
+        "artis": "Pamungkas",
+        "tanggal": "25 September 2026",
+        "genre": "Pop",
+        "harga": 950000,
+        "tempat": "Taluk Kuantan Sport Center",
+        "seat_tersedia": 60,
+        "nama_seat": ["P1", "P2", "P3", "P4", "P5"]
+    },
+
+    {
+        "artis": "Rich Brian",
+        "tanggal": "10 Oktober 2026",
+        "genre": "Hip Hop",
+        "harga": 1750000,
+        "tempat": "Tennis Indoor Senayan",
+        "seat_tersedia": 75,
+        "nama_seat": ["H1", "H2", "H3", "H4", "H5"]
+    },
+
+    {
+        "artis": "Blackpink",
+        "tanggal": "22 Oktober 2026",
+        "genre": "K-Pop",
+        "harga": 3500000,
+        "tempat": "Gelora Bung Karno",
+        "seat_tersedia": 150,
+        "nama_seat": ["VIPA", "VIPB", "REGA", "REGB", "TRIBUN"]
+    },
+
+    {
+        "artis": "The 1975",
+        "tanggal": "2 November 2026",
+        "genre": "Rock",
+        "harga": 2100000,
+        "tempat": "Lapangan MTQ Pekanbaru",
+        "seat_tersedia": 80,
+        "nama_seat": ["T1", "T2", "T3", "T4", "T5"]
+    },
+
+    {
+        "artis": "Hindia",
+        "tanggal": "15 November 2026",
+        "genre": "Indie",
+        "harga": 1200000,
+        "tempat": "Convention Hall Surabaya",
+        "seat_tersedia": 65,
+        "nama_seat": ["I1", "I2", "I3", "I4", "I5"]
+    },
+
+    {
+        "artis": "Taylor Swift",
+        "tanggal": "28 November 2026",
+        "genre": "Country",
+        "harga": 4500000,
+        "tempat": "Jakarta International Stadium",
+        "seat_tersedia": 200,
+        "nama_seat": ["TS1", "TS2", "TS3", "TS4", "TS5"]
+    },
+
+    {
+        "artis": "Joji",
+        "tanggal": "5 Desember 2026",
+        "genre": "R&B",
+        "harga": 2000000,
+        "tempat": "Alam Mayang Pekanbaru",
+        "seat_tersedia": 95,
+        "nama_seat": ["J1", "J2", "J3", "J4", "J5"]
+    },
+
+    {
+        "artis": "Alan Walker",
+        "tanggal": "18 Desember 2026",
+        "genre": "EDM",
+        "harga": 2300000,
+        "tempat": "Atlas Beach Club Bali",
+        "seat_tersedia": 110,
+        "nama_seat": ["E1", "E2", "E3", "E4", "E5"]
+    },
+
+    {
+        "artis": "Dewa 19",
+        "tanggal": "8 Januari 2027",
+        "genre": "Rock",
+        "harga": 1400000,
+        "tempat": "Stadion Manahan Solo",
+        "seat_tersedia": 100,
+        "nama_seat": ["D1", "D2", "D3", "D4", "D5"]
+    },
+
+    {
+        "artis": "Marshmello",
+        "tanggal": "20 Januari 2027",
+        "genre": "EDM",
+        "harga": 2700000,
+        "tempat": "GWK Bali",
+        "seat_tersedia": 130,
+        "nama_seat": ["M1", "M2", "M3", "M4", "M5"]
     }
 ]
