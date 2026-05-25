@@ -1,14 +1,10 @@
-# algo:
-# masuk ke method, baca file histori transaksi (nama file smntr: histori.json), cari transaksi terakhir user,
-# hapus transaksi terakhir itu, kembalikan seatnya (jd avail lg), simpan ulang json, kurang lebih gitu
-
 import json
 
 class UndoTransaksi:
     
     def batalkan(self, username):
         # baca file histori dulu
-        with open("histori.json", "r") as f:
+        with open("user.json", "r") as f:
             histori = json.load(f)
 
         transaksi_terakhir = None
@@ -27,12 +23,25 @@ class UndoTransaksi:
         histori.remove(transaksi_terakhir)
 
         #simpan ulang histori
-        with open("history.json", "w") as f:
+        with open("user.json", "w") as f:
             json.dump(histori, f, indent = 4)
 
         # baca data konser
-        with open("histori.json", "r") as f:
+        with open("user.json", "r") as f:
             data_konser = json.load(f)
 
         # kembalikan seat
-        # simpan ulang data        
+        for konser in data_konser:
+            if konser['nama'] == transaksi_terakhir['konser']:
+                konser['seat_tersedia'].append(transaksi_terakhir['seat'])
+                break
+       
+        # simpan ulang data
+        with open('konser.json', 'w') as f:
+            json.dump(data_konser, f, indent=4)               
+
+        
+        print("\n=== TRANSAKSI BERHASIL DIBATALKAN ===")
+        print(f"Konser : {transaksi_terakhir['konser']}")
+        print(f"Seat   : {transaksi_terakhir['seat']}")
+        print(f"Harga  : Rp {transaksi_terakhir['harga']}")
