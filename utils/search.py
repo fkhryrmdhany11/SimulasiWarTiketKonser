@@ -20,12 +20,12 @@ def LinearSearch():
 
                 ditemukan = True
                 
-                print(f"\nNama Artis     : {konser['artis']}")
+                print(f"Artis          : {konser['artis']}")
                 print(f"Tanggal        : {konser['tanggal']}")
-                print(f"Genre          : {konser['genre']}")
-                print(f"Harga Tiket    : Rp {konser['harga']}")
                 print(f"Tempat         : {konser['tempat']}")
-                print(f"Seat Tersedia  : {konser['seat_tersedia']}")
+                print(f"Harga Tiket    : Rp{konser['harga_reg']:,} - " f"Rp{konser['harga_vip']:,}")
+                print(f"VIP Seat       : {konser['vip_seat']}")
+                print(f"Regular Seat   : {konser['reg_seat']}\n")
                 break
 
     if not ditemukan:

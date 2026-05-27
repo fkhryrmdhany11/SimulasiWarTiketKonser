@@ -1,4 +1,4 @@
-from system.sistem import SistemWarTiket
+from sistem.sistem import SistemWarTiket
 from utils.util import print_header, cls, pembatas
 from menu.menu import menu_awal, menu_utama
 sistem = SistemWarTiket()

@@ -1,0 +1,47 @@
+{
+    "POP": [
+        "K-POP",
+        "R&B",
+        "INDIE",
+        "EDM"
+    ],
+
+    "K-POP": [
+        "POP",
+        "R&B"
+    ],
+
+    "R&B": [
+        "POP",
+        "HIP HOP",
+        "K-POP"
+    ],
+
+    "HIP HOP": [
+        "R&B",
+        "EDM"
+    ],
+
+    "ROCK": [
+        "INDIE"
+    ],
+
+    "INDIE": [
+        "POP",
+        "ROCK",
+        "COUNTRY"
+    ],
+
+    "EDM": [
+        "HIP HOP",
+        "POP"
+    ],
+
+    "COUNTRY": [
+        "INDIE"
+    ],
+
+    "DANGDUT": [
+        "POP"
+    ]
+}

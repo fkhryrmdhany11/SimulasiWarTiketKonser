@@ -1,5 +1,6 @@
 import json
 from utils.sort import sort_artis
+from utils.path import KONSER_FILE
 import utils.util as ut
 
 # =========================
@@ -78,12 +79,9 @@ class GenreTree:
     # =========================
 
     def tampilkan(self, root):
-
         if root is not None:
-
             # Traversal kiri
             self.tampilkan(root.left)
-
             ut.print_header(f"{root.genre.upper()}")
 
             # Urutkan artis berdasarkan abjad
@@ -94,9 +92,9 @@ class GenreTree:
                 print(f"Artis          : {konser['artis']}")
                 print(f"Tanggal        : {konser['tanggal']}")
                 print(f"Tempat         : {konser['tempat']}")
-                print(f"Harga Tiket    : Rp{konser['harga']}")
-                print(f"Seat Tersedia  : {konser['seat_tersedia']}\n")
-                # print("-" * 60)
+                print(f"Harga Tiket    : Rp{konser['harga_reg']:,} - " f"Rp{konser['harga_vip']:,}")
+                print(f"VIP Seat       : {konser['vip_seat']}")
+                print(f"Regular Seat   : {konser['reg_seat']}\n")
 
             # Traversal kanan
             self.tampilkan(root.right)
@@ -106,9 +104,9 @@ class GenreTree:
 # LOAD JSON
 # =========================
 
-def load_konser(filename="konser.json"):
+def load_konser():
 
-    with open(filename, "r", encoding="utf-8") as file:
+    with open(KONSER_FILE, "r", encoding="utf-8") as file:
         data_konser = json.load(file)
 
     pohon_genre = GenreTree()
@@ -117,3 +115,4 @@ def load_konser(filename="konser.json"):
         pohon_genre.tambah_konser(konser)
 
     return pohon_genre
+
