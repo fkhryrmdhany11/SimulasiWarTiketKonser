@@ -73,13 +73,13 @@
                 "kategori": "REGULER",
                 "harga": 2500000,
                 "booked": false,
-                "username": null
+                "username": "null"
             },
             "REG2": {
                 "kategori": "REGULER",
                 "harga": 2500000,
                 "booked": false,
-                "username": null
+                "username": "null"
             },
             "REG3": {
                 "kategori": "REGULER",
@@ -175,7 +175,7 @@
                 "kategori": "VIP",
                 "harga": 3500000,
                 "booked": false,
-                "username": null
+                "username": "null"
             },
             "VIP2": {
                 "kategori": "VIP",
@@ -432,13 +432,13 @@
             "VIP2": {
                 "kategori": "VIP",
                 "harga": 2500000,
-                "booked": true,
+                "booked": false,
                 "username": "pari"
             },
             "VIP3": {
                 "kategori": "VIP",
                 "harga": 2500000,
-                "booked": true,
+                "booked": false,
                 "username": "yadi"
             },
             "VIP4": {
@@ -2275,7 +2275,7 @@
                 "kategori": "VIP",
                 "harga": 9000000,
                 "booked": false,
-                "username": null
+                "username": "null"
             },
             "VIP2": {
                 "kategori": "VIP",
@@ -2335,7 +2335,7 @@
                 "kategori": "REGULER",
                 "harga": 4500000,
                 "booked": false,
-                "username": null
+                "username": "null"
             },
             "REG2": {
                 "kategori": "REGULER",

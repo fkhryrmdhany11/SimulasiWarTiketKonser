@@ -1,6 +1,5 @@
 from structures.circular_linked_list import CircularLinkedList
 
-
 class Rekomendasi_Sistem:
     def __init__(self, sistem):
         self.sistem = sistem
@@ -8,14 +7,11 @@ class Rekomendasi_Sistem:
         self.load_rekomendasi()
 
     def load_rekomendasi(self):
-
         user = self.sistem.user_login
-
         if not user:
             return
 
         genre_favorit = user.minat_genre.lower()
-
         genre_terkait = [g.lower() for g in self.sistem.genre_graph.get_relasi(genre_favorit)]
 
         for konser in self.sistem.konser_list:

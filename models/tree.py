@@ -28,7 +28,6 @@ class GenreTree:
     # =========================
 
     def insert_genre(self, root, genre, konser):
-
         # Jika node kosong
         if root is None:
             node = GenreNode(genre)
@@ -41,20 +40,11 @@ class GenreTree:
 
         # Jika genre lebih kecil
         elif genre < root.genre:
-            root.left = self.insert_genre(
-                root.left,
-                genre,
-                konser
-            )
+            root.left = self.insert_genre(root.left, genre, konser)
 
         # Jika genre lebih besar
         else:
-            root.right = self.insert_genre(
-                root.right,
-                genre,
-                konser
-            )
-
+            root.right = self.insert_genre(root.right, genre, konser)
         return root
 
     # =========================
@@ -62,18 +52,12 @@ class GenreTree:
     # =========================
 
     def tambah_konser(self, konser):
-
         # Pastikan key genre ada
         if "genre" not in konser:
             return
 
         genre = konser["genre"]
-
-        self.root = self.insert_genre(
-            self.root,
-            genre,
-            konser
-        )
+        self.root = self.insert_genre(self.root, genre, konser)
 
     # =========================
     # TAMPILKAN TREE
@@ -87,16 +71,13 @@ class GenreTree:
 
             # Urutkan artis berdasarkan abjad
             artis_sorted = sort_artis(root.konser_list)
-
             for konser in artis_sorted:
-
                 print(f"Artis          : {konser['artis']}")
                 print(f"Tanggal        : {konser['tanggal']}")
                 print(f"Tempat         : {konser['tempat']}")
                 print(f"Harga Tiket    : Rp{konser['harga_reg']:,} - " f"Rp{konser['harga_vip']:,}")
                 print(f"VIP Seat       : {konser['vip_seat']}")
                 print(f"Regular Seat   : {konser['reg_seat']}\n")
-
             # Traversal kanan
             self.tampilkan(root.right)
 
@@ -106,14 +87,11 @@ class GenreTree:
 # =========================
 
 def load_konser():
-
     with open(KONSER_FILE, "r", encoding="utf-8") as file:
         data_konser = json.load(file)
 
     pohon_genre = GenreTree()
-
     for konser in data_konser:
         pohon_genre.tambah_konser(konser)
-
     return pohon_genre
 

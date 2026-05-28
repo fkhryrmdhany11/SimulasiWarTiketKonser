@@ -14,9 +14,7 @@ def menu_awal(sistem):
         print("2. Login")
         print("0. Kembali")
         pembatas()
-
         pilihan = input("Pilih menu: ")
-
 
         if pilihan == "1":
             user = sistem.register()
@@ -54,7 +52,6 @@ def menu_genre(user):
         print("8. R&B")
         print("9. ROCK")
         pembatas()
-
         pilihan = input("Pilih Genre: ")
 
         genre_map = {
@@ -92,7 +89,6 @@ def menu_utama(sistem):
         print("4. Batalkan Transaksi")
         print("0. Keluar")
         pembatas()
-
         pilihan = input("Pilih menu: ")
 
 
@@ -127,7 +123,6 @@ def menu_daftar_konser():
         print("2. Tampilkan Konser")
         print("0. Keluar")
         pembatas()
-
         pilihan = input("Pilih menu: ")
 
         if pilihan == "1":
@@ -153,7 +148,6 @@ def menu_booking_seat(sistem):
         print("1. Booking Seat")
         print("0. Keluar")
         pembatas()
-
         pilihan = input("Pilih menu: ")
 
 
@@ -176,7 +170,6 @@ def menu_batalkan_transaksi(sistem):
         print("1. Batalkan Transaksi")
         print("0. Keluar")
         pembatas()
-
         pilihan = input("Pilih menu: ")
 
 
@@ -204,6 +197,7 @@ def menu_histori_transaksi(sistem):
         pilihan = input("Pilih menu: ")
 
         if pilihan == "1":
+            history_sistem.searching_history()
             verif()
 
         elif pilihan == "2":
