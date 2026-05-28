@@ -1,3 +1,4 @@
+# menyimpan data user
 from structures.double_linked_list import DoubleLinkedList
 from structures.single_linked_list import SingleLinkedList
 
@@ -16,4 +17,4 @@ class User:
         self.undo_stack = SingleLinkedList()
 
         # minat genre
-        self.minat_genre = ""
+        self.minat_genre = ""   # menyimpan genre favorit user untuk rekomendasi konser

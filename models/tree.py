@@ -1,3 +1,4 @@
+# menyimpan konser berdasarkan genre menggunakan binary search tree
 import json
 from utils.sort import sort_artis
 from utils.path import KONSER_FILE

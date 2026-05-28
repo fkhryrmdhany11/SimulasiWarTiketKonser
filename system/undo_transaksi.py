@@ -1,3 +1,5 @@
+# implementasi fitur undo untuk membatalkan transaksi terakhir menggunakan stack
+
 import json
 
 class UndoTransaksi:

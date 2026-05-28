@@ -1,3 +1,4 @@
+# menyimpan relasi antar genre
 import json
 from utils.path import GRAPH_FILE
 
