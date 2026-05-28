@@ -1,7 +1,7 @@
 from datetime import datetime
+from utils.util import print_header, cls, print_section
 
 class Booking_Sistem:
-
     def __init__(self, sistem):
         self.sistem = sistem
 
@@ -19,13 +19,9 @@ class Booking_Sistem:
     # TAMPILKAN LAYOUT VENUE
     # =========================
     def tampilkan_layout_venue(self, seats):
-        print("=" * 55)
-        print(" " * 24 + "STAGE")
-        print("=" * 55)
-
-        # ================= VIP =================
-        print("\n---------------- VIP SECTION ----------------\n")
-
+        cls()
+        print_header("STAGE")
+        print_section("VIP SECTION")
         vip_count = 0
         for kode, data in seats.items():
             if data["kategori"] == "VIP":
@@ -36,9 +32,7 @@ class Booking_Sistem:
                 if vip_count % 5 == 0:
                     print()
 
-        # ================= REGULER =================
-        print("\n\n------------- REGULAR SECTION --------------\n")
-
+        print_section("REGULAR SECTION")
         reg_count = 0
         for kode, data in seats.items():
             if data["kategori"] == "REGULER":
@@ -49,17 +43,19 @@ class Booking_Sistem:
                 if reg_count % 5 == 0:
                     print()
 
-        print("\n\n" + "=" * 55)
+        print("\n" + "=" * 60)
         print("[ ] = TERSEDIA")
         print("[X] = TERBOOKING")
-        print("=" * 55)
+        print("=" * 60)
 
     # =========================
     # BOOKING SEAT
     # =========================
     def booking_seat(self, konser_list, username,):
         # ================= CARI ARTIS =================
-        keyword = input("Cari artis: ")
+        cls()
+        print_header("PENCARIAN")
+        keyword = str(input("Masukkan Nama Artis: "))
         hasil = self.cari_konser(konser_list,keyword)
 
         # konser tidak ditemukan
@@ -68,8 +64,8 @@ class Booking_Sistem:
             return
 
         # ================= TAMPILKAN HASIL =================
-        print("\nHASIL PENCARIAN\n")
-
+        print()
+        print_header("HASIL PENCARIAN")
         for i, konser in enumerate(hasil, start=1):
             print(f"{i}. {konser['artis']} ({konser['genre']})")
 
@@ -119,44 +115,17 @@ class Booking_Sistem:
         self.sistem.save_konser()
 
         # ================= OUTPUT =================
-        print("\n" + "=" * 45)
-        print("         BOOKING BERHASIL")
-        print("=" * 45)
+        cls()
+        print_header("BOOKING BERHASIL")
 
         print(f"Username : {username}")
         print(f"Artis    : {konser['artis']}")
         print(f"Genre    : {konser['genre']}")
         print(f"Seat     : {seat}")
         print(f"Kategori : {seats[seat]['kategori']}")
-        print(f"Harga    : Rp{seats[seat]['harga']}")
+        print(f"Harga    : Rp{seats[seat]['harga']:,}")
         print(f"Waktu    : {transaksi['waktu']}")
-        print("=" * 45)
-
-    # =========================
-    # TAMPILKAN HISTORY
-    # =========================
-    def tampilkan_history(self):
-        print("=" * 50)
-        print("         HISTORY TRANSAKSI")
-        print("=" * 50)
-
-        current = self.sistem.user_login.history.head
-        if not current:
-            print("Belum ada transaksi.")
-            return
-
-        while current:
-            transaksi = current.data
-            print(f"Artis    : {transaksi['artis']}")
-            print(f"Genre    : {transaksi['genre']}")
-            print(f"Seat     : {transaksi['seat']}")
-            print(f"Kategori : {transaksi['kategori']}")
-            print(f"Harga    : Rp{transaksi['harga']}")
-            print(f"Waktu    : {transaksi['waktu']}")
-            print(f"Status   : {transaksi['status']}")
-            print("-" * 50)
-
-            current = current.next
+        print("=" * 60)
 
     # =========================
     # JALANKAN BOOKING sistem

@@ -24,3 +24,8 @@ def verif():
     """
     input("\nTekan Enter untuk lanjut...")
     cls()
+
+def print_section(title):
+    panjang = 60
+    garis = (panjang - len(title) - 2) // 2
+    print(f"\n{'-' * garis} {title} {'-' * garis}\n")

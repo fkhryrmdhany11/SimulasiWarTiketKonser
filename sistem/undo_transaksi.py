@@ -20,7 +20,6 @@ class UndoTransaksi_Sistem:
         # KOSONGKAN SEAT
         # =========================
         for konser in self.system.konser_list:
-
             if konser["artis"] == artis:
                 seats = konser["seats"]
                 seats[seat]["booked"] = False
