@@ -38,15 +38,17 @@ class History_Sistem:
         print_header("PENCARIAN")
         keyword = str(input("Masukkan Nama Artis: "))
 
-        # mulai pencarian dari node pertama histori
+        # mulai pencarian dari node pertama di history
         current = self.system.user_login.history.head
         ditemukan = False
 
         print()
         print_header("HASIL PENCARIAN")
+
+        # telusuri seluruh node dalam linked list history
         while current:
-            transaksi = current.data
-            if keyword in transaksi["artis"].lower():
+            transaksi = current.data # ambil data (dict) transaksi dari node saat ini
+            if keyword in transaksi["artis"].lower(): # cek apakah keyword cocok dengan nama artis
                 ditemukan = True
                 print(f"Artis    : {transaksi['artis']}")
                 print(f"Genre    : {transaksi['genre']}")
@@ -56,7 +58,8 @@ class History_Sistem:
                 print(f"Waktu    : {transaksi['waktu']}")
                 print(f"Status   : {transaksi['status']}")
                 print("-" * 60)
-            current = current.next
+            current = current.next # pindah ke node berikutnya 
 
+        # jika seluruh list telah ditelusuri tidak ada yang cocok, tampilkan pesan
         if not ditemukan:
             print("History tidak ditemukan.")
