@@ -3,5 +3,10 @@
         "password": "se7dream",
         "minat_genre": "K-POP",
         "history": []
+    },
+    "fil": {
+        "password": "123",
+        "minat_genre": "INDIE",
+        "history": []
     }
 }

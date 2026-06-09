@@ -119,8 +119,8 @@ def menu_daftar_konser():
     cls()
     while True:
         print_header("DAFTAR KONSER")
-        print("1. Searching Konser")
-        print("2. Tampilkan Konser")
+        print("1. Cari Konser")
+        print("2. Tampilkan Daftar Konser")
         print("0. Keluar")
         pembatas()
         pilihan = input("Pilih menu: ")
